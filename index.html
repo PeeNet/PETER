@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button id="nav-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <nav>
+            <ul id="nav-menu" class="hidden">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <img src="images/IMG-20240426-WA0020.jpg" alt="Your Avatar" id="avatar">
+        <h1>Welcome to My Portfolio</h1>
+         <H2> I responses to PETER AMPOMAH </H2><br>
+        <p>Explore my projects, skills, and memories.</p>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm pursuing a degree in Information Technology and have a strong interest in developing solutions to improve the healthcare industry, among other things.</p>
+     <p>
+        My portfolio showcases my journey as a passionate IT student, highlighting key projects like the nurses' attendance system and document filter web app, alongside my graphic design skills and budding networking expertise. It reflects my vision to leverage technology for innovation, inspire the next generation, and make meaningful contributions to society through education, leadership, and impactful projects.</p>
+    </section>
+  
+    <section id="internships">
+        <h2>Internships</h2>
+        <div class="internship">
+            <img src="images/int1.jpg" alt="Software Development Internship">
+            <h3>Networking Intern</h3>
+            <p><strong>Company:</strong> BUI POWER AUTHORITY</p>
+            <p><strong>Duration:</strong> OCTORBER 2024 - DEC 2 2024</p>
+            <p><strong>Responsibilities:</strong> Networking Troubleshooting, collaborated on team projects, and improved system efficiency.</p>
+        </div>
+        <div class="internship">
+            <img src="images/20240927_123719.jpg" alt="Graphic Design Internship">
+            <h3>Hardware & Software Intern</h3>
+            <p><strong>Company:</strong> LEYAATA HOSPITAL</p>
+            <p><strong>Duration:</strong> SEPTEMBER 2023 - NOV 2023</p>
+            <p><strong>Responsibilities:</strong> Hardware repairing, Software installation, and enhanced brand identity.</p>
+        </div>
+    </section>
+    
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Nurses' Attendance System</h3>
+            <p>A system designed to manage the attendance of nurses, with features like leave requests and shift scheduling.</p>
+            <img src="images/Screenshot_12-10-2024_204019_localhost.jpeg" alt="Nurses Attendance System Screenshot" class="project-image">
+            <a href="#">View Project</a>
+        </div>
+        
+        <div class="project">
+            <h3>Document Filter Web App</h3>
+            <p>An app that helps users upload and organize documents efficiently.</p>
+            <a href="#">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Graphic Design Portfolio</h3>
+            <img src="images/marcus.png" alt="">
+            <p>A collection of my graphic design work, showcasing logos, websites, and other digital art pieces.</p>
+            <a href="#">View Portfolio</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Web Development (HTML, CSS, JavaScript, PHP, MySQL)</li>
+            <li>Graphic Design (Photoshop, Illustrator)</li>
+            <li>Networking (Basic Networking and Troubleshooting)</li>
+        </ul>
+    </section>
+    <section id="chatbot">
+        <h2>Chat with me</h2>
+        <div id="chat-box">
+            <div class="message bot-message">Hello! Ask me about my projects or skills.</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </section>
+    
+    <script>
+    function sendMessage() {
+        const userInput = document.getElementById('user-input').value;
+        const chatBox = document.getElementById('chat-box');
+    
+        if (userInput) {
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user-message');
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+    
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('message', 'bot-message');
+            botMessage.textContent = getBotResponse(userInput);
+            chatBox.appendChild(botMessage);
+    
+            document.getElementById('user-input').value = ''; // Clear input field
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+        }
+    }
+    
+    function getBotResponse(input) {
+        // Simple logic for responses
+        if (input.toLowerCase().includes("project")) {
+            return "I have several projects, including a Nurses' Attendance System and a Document Filter Web App.";
+        } else if (input.toLowerCase().includes("skills")) {
+            return "I have skills in Web Development, Graphic Design, and Networking.";
+        } else {
+            return "I'm not sure about that. Can you ask me something else?";
+        }
+    }
+    </script>
+    
+    <style>
+    #chatbot {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #chat-box {
+        max-height: 300px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+    
+    .message {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        max-width: 80%;
+    }
+    
+    .bot-message {
+        background-color: #e1e1e1;
+        align-self: flex-start;
+    }
+    
+    .user-message {
+        background-color: #4CAF50;
+        color: white;
+        align-self: flex-end;
+    }
+    
+    input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    </style>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="24d9bcfd-f886-4e87-8275-c73a0ad44902">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <h3>Cont: +233 547369977</h3>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Peter's Portfolio. All rights reserved.</p>
+    </footer>
+
+
+
+
+<script>
+    const toggleButton = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    toggleButton.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+    });
+</script>
+
+    
+</body>
+</html>

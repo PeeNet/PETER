@@ -1,0 +1,445 @@
+/* General Styles */
+:root {
+    --primary-color: #1e1e1e; /* Dark Gray */
+    --secondary-color: #ff5722; /* Vibrant Orange */
+    --text-color: #ffffff; /* White */
+    --accent-color: #03a9f4; /* Blue */
+    --background-color: #121212; /* Blackish Background */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+/* Navbar styles */
+header {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#nav-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the menu is visible on desktop */
+@media (min-width: 769px) {
+    #nav-menu {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #nav-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 10px 0;
+        display: none; /* Hidden initially for mobile */
+    }
+
+    #nav-menu.hidden {
+        display: none; /* Ensure it's hidden when toggled off */
+    }
+
+    #nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Home Section */
+#home {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#home #avatar {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#home h1 {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+}
+.project img{
+    width: 100%;
+}
+#home p {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+/* Section Titles */
+section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+/* Projects Section */
+#projects {
+    background-color: var(--background-color);
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project {
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    width: calc(100% - 40px);
+    max-width: 400px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project h3 {
+    color: var(--secondary-color);
+}
+
+.project a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid var(--secondary-color);
+}
+
+#contact form {
+    background-color: var(--background-color);
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    color: var(--text-color);
+}
+
+#contact button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+    border-top: 2px solid var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #home {
+        padding: 60px 20px;
+    }
+
+    #home h1 {
+        font-size: 2em;
+    }
+
+    #projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #home h1 {
+        font-size: 1.8em;
+    }
+
+    #home p {
+        font-size: 1em;
+    }
+
+    #contact form {
+        padding: 10px;
+    }
+
+    #contact button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+/* About Section */
+#about {
+    background-color: var(--primary-color);
+    padding: 40px 20px;
+    border-top: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#about .content {
+    max-width: 800px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+#about img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Responsive Adjustments for About Section */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #about img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #about p {
+        font-size: 1em;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #about img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #about p {
+        font-size: 0.9em;
+    }
+}
+/* Internships Section */
+#internships {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#internships h2 {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.internship {
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.internship img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.internship h3 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.internship p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+
+/* Navigation Styles */
+header {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#nav-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-menu.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #nav-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 10px 0;
+    }
+
+    #nav-menu.hidden {
+        display: none;
+    }
+
+    #nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}

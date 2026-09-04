@@ -47,7 +47,37 @@
         0 24px 70px rgba(24, 33, 54, 0.12);
 }
 
+.experience-image {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
+.experience-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.experience-image {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
 
 /* RESET */
 
